@@ -13,7 +13,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/highlights", label: "Highlights" },
-  { href: "/team", label: "Team" },
+  { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/host", label: "Host With Us", cta: true },

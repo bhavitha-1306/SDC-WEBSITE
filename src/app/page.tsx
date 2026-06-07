@@ -1,46 +1,32 @@
 import Link from "next/link";
 import { publicListEvents } from "@/admin/lib/data/events";
-import { publicListHighlights } from "@/admin/lib/data/highlights";
-import { publicListTeam } from "@/admin/lib/data/team";
 import { publicListPartners } from "@/admin/lib/data/partners";
 import { mapRowsToEvents } from "@/lib/mappers/events";
-import { mapRowToHighlight } from "@/lib/mappers/highlights";
-import { mapRowToTeamMember } from "@/lib/mappers/team";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import HeroContent from "@/components/HeroContent";
 import EventCard from "@/components/cards/EventCard";
-import TeamCard from "@/components/cards/TeamCard";
 import PartnerCard from "@/components/cards/PartnerCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import GalleryReveal from "@/components/GalleryReveal";
-import HighlightsHScroll from "@/components/HighlightsHScroll";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import CommunityShowcase from "@/components/CommunityShowcase";
+import TeamHScroll from "@/components/TeamHScroll";
 
 export const revalidate = 60;
 
 const TECH_TAGS_A = ["Web Development", "AI / ML", "UI / UX Design", "Blockchain / Web3", "Backend Dev", "Data Science", "Hackathons", "Open Source", "Cloud & DevOps", "Mobile Dev"];
 
 export default async function Home() {
-  const [upcomingRows, pastRows, highlightRows, teamRows, partnerRows] = await Promise.all([
+  const [upcomingRows, pastRows, partnerRows] = await Promise.all([
     publicListEvents({ filter: "upcoming" }),
     publicListEvents({ filter: "past" }),
-    publicListHighlights(),
-    publicListTeam(),
     publicListPartners(),
   ]);
 
   const upcoming       = upcomingRows[0];
   const recentPast     = mapRowsToEvents(pastRows.slice(0, 3));
-  const allHighlights  = highlightRows.map(mapRowToHighlight);
-  const homeHighlights = allHighlights.slice(0, 6);
-
-  const teamMembers = teamRows.map(mapRowToTeamMember);
-  const founder     = teamMembers.find((m) => m.section === "Founder");
-  const core        = teamMembers.filter((m) => m.section !== "Founder").slice(0, 3);
-  const HOME_TEAM_PREVIEW = [founder, ...core].filter((m): m is NonNullable<typeof founder> => Boolean(m));
 
   return (
     <main className="overflow-x-hidden">
@@ -307,37 +293,9 @@ export default async function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SECTION 8 — SUCCESS STORIES (GSAP horizontal scroll)
+          SECTION 8 — TEAM (horizontal scroll)
       ═══════════════════════════════════════ */}
-      <div style={{ background: "var(--surface)" }}>
-        <HighlightsHScroll highlights={homeHighlights} />
-      </div>
-
-      {/* ═══════════════════════════════════════
-          SECTION 9 — TEAM
-      ═══════════════════════════════════════ */}
-      <section className="py-24">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <ScrollReveal>
-            <div className="flex justify-between items-end mb-10 flex-wrap gap-4">
-              <div>
-                <div className="sec-label mb-2">// THE TEAM</div>
-                <h2 className="sec-title">The people behind SDC</h2>
-              </div>
-              <Link href="/team" className="btn-outline" style={{ fontSize: ".82rem" }}>Full team →</Link>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {HOME_TEAM_PREVIEW.map((m, i) => (
-              <ScrollReveal key={m.id} delay={i * 80}>
-                <Link href={`/team#${m.id}`} className="block h-full">
-                  <TeamCard member={m} />
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamHScroll />
 
       {/* ═══════════════════════════════════════
           SECTION 10 — TESTIMONIALS (two-row marquee)

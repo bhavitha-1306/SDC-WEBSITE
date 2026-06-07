@@ -114,7 +114,7 @@ export default function HeroContent() {
         transition={{ delay: 1.05, duration: 0.8, ease: EASE }}
         className="flex gap-4 justify-center flex-wrap mb-16"
       >
-        <Link href="/host" className="btn-grad" style={{ fontSize: ".95rem", padding: ".85rem 2rem" }}>
+        <Link href="/contact" className="btn-grad" style={{ fontSize: ".95rem", padding: ".85rem 2rem" }}>
           Join Community
         </Link>
         <Link href="/events" className="btn-outline" style={{ fontSize: ".95rem", padding: ".85rem 2rem" }}>
