@@ -167,7 +167,7 @@ export default function CommunityShowcase() {
                 </div>
                 <div className="gtext font-extrabold leading-none mb-3"
                   style={{ fontSize: "clamp(3.2rem, 8vw, 5rem)", letterSpacing: "-0.04em" }}>
-                  <AnimatedCounter value="2500+" label="" />
+                  <AnimatedCounter value="5000+" label="" />
                 </div>
                 <p className="text-[.9rem] font-medium" style={{ color: "var(--text)" }}>Members across India</p>
                 <p className="text-[.75rem] mt-1" style={{ color: "var(--muted)" }}>and growing every semester</p>
