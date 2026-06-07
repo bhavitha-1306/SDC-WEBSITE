@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("sdc-theme") as "dark" | "light" | null;
-    if (saved) setTheme(saved);
+    setTheme(saved ?? "light");
   }, []);
 
   const toggle = () => {

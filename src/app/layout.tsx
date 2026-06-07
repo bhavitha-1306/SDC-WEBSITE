@@ -29,8 +29,14 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           try {
             var t = localStorage.getItem('sdc-theme');
-            if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
-          } catch(e) {}
+            if (t === 'dark') {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+              document.documentElement.setAttribute('data-theme', 'light');
+            }
+          } catch(e) {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
         ` }} />
       </head>
       <body className="antialiased">

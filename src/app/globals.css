@@ -5,47 +5,18 @@
    Single font: Helvetica stack site-wide
 ─────────────────────────────────────── */
 :root {
-  /* ── Dark theme (default) ── */
-  --bg: #080808;
-  --surface: #0f0f0f;
-  --card: #141414;
-  --border: #1e1e1e;
-  --border2: #2a2a2a;
+  /* ── Light theme (default) ── */
+  --bg:      #FFFCF8;
+  --surface: #FFF3E8;
+  --card:    #FFFFFF;
+  --border:  rgba(210,105,30,.14);
+  --border2: rgba(210,105,30,.24);
 
   --a1: #ff3d6e;
   --a2: #f97316;
   --a3: #c2185b;
   --grad: linear-gradient(135deg, #f97316 0%, #ff3d6e 52%, #c2185b 100%);
   --grad-r: linear-gradient(135deg, #c2185b 0%, #ff3d6e 52%, #f97316 100%);
-
-  --text: #efefef;
-  --muted: #555;
-  --sub: #888;
-
-  /* Navbar */
-  --nav-bg: rgba(8,8,8,.85);
-  --nav-bg-scrolled: rgba(8,8,8,.97);
-  --nav-mob-bg: rgba(8,8,8,.98);
-  --nav-border: var(--border);
-  --nav-border-scrolled: rgba(255,61,110,.14);
-
-  --spring: cubic-bezier(.34, 1.56, .64, 1);
-  --ease-out: cubic-bezier(.22, .61, .36, 1);
-  --ease-expo: cubic-bezier(.19, 1, .22, 1);
-
-  --font-helv: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-/* ════════════════════════════════════════
-   LIGHT THEME — SDC logo palette
-   Warm white + orange/red/magenta accents
-════════════════════════════════════════ */
-[data-theme="light"] {
-  --bg:      #FFFCF8;
-  --surface: #FFF3E8;
-  --card:    #FFFFFF;
-  --border:  rgba(210,105,30,.14);
-  --border2: rgba(210,105,30,.24);
 
   --text:  #1A0D04;
   --muted: #A06035;
@@ -57,6 +28,34 @@
   --nav-mob-bg: rgba(255,252,248,.99);
   --nav-border: rgba(210,105,30,.15);
   --nav-border-scrolled: rgba(210,105,30,.25);
+
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+  --ease-expo: cubic-bezier(.19, 1, .22, 1);
+
+  --font-helv: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ════════════════════════════════════════
+   DARK THEME override
+════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg: #080808;
+  --surface: #0f0f0f;
+  --card: #141414;
+  --border: #1e1e1e;
+  --border2: #2a2a2a;
+
+  --text: #efefef;
+  --muted: #555;
+  --sub: #888;
+
+  /* Navbar in dark */
+  --nav-bg: rgba(8,8,8,.85);
+  --nav-bg-scrolled: rgba(8,8,8,.97);
+  --nav-mob-bg: rgba(8,8,8,.98);
+  --nav-border: var(--border);
+  --nav-border-scrolled: rgba(255,61,110,.14);
 }
 
 /* Smooth theme transition on key surfaces */
