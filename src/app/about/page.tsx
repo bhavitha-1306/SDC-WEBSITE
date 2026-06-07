@@ -41,14 +41,14 @@ export default async function AboutPage() {
             The <strong style={{ color: "var(--text)" }}>Student Developers Community (SDC)</strong> was established in <strong style={{ color: "var(--text)" }}>2022 at Sreenidhi Institute of Science and Technology (SNIST)</strong>, founded by <strong style={{ color: "var(--text)" }}>Mr. Chandrashekhar M</strong> — a SNIST alumnus from the 2021–2024 batch.
           </p>
           <p className="text-[.92rem] leading-[1.85] mt-3" style={{ color: "var(--sub)" }}>
-            His vision was simple: create a space where students grow technically through collaboration and hands-on learning. Today, SDC unites over <strong style={{ color: "var(--text)" }}>2500 members</strong> with a growing national footprint under <span className="gtext font-bold">SDC INDIA</span>.
+            His vision was simple: create a space where students grow technically through collaboration and hands-on learning. Today, SDC unites over <strong style={{ color: "var(--text)" }}>5000 members</strong> with a growing national footprint under <span className="gtext font-bold">SDC INDIA</span>.
           </p>
         </div>
 
         <div className="sec-label mb-2">// COMMUNITY IMPACT</div>
         <h3 className="sec-title mb-6" style={{ fontSize: "1.5rem" }}>By the numbers</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {[...impactStatsStub, { value: "2500+", label: "Community Members" }].map((s) => (
+          {[...impactStatsStub, { value: "5000+", label: "Community Members" }].map((s) => (
             <div key={s.label} className="rounded-[14px] p-6 text-center" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
               <div className="gtext font-extrabold text-[2.4rem]" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{s.value}</div>
               <div className="text-[.72rem] mt-1.5" style={{ color: "var(--muted)", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
