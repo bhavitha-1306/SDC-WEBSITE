@@ -5,7 +5,7 @@ import Link from "next/link";
 import AnimatedCounter from "./AnimatedCounter";
 
 const STATS = [
-  { value: "2500+", label: "MEMBERS" },
+  { value: "5000+", label: "MEMBERS" },
   { value: "50+",   label: "EVENTS" },
   { value: "120+",  label: "WORKSHOPS" },
   { value: "10+",   label: "PARTNERS" },
