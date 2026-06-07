@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SDC INDIA — Student Developers Community",
     description:
-      "Founded in 2022 at SNIST. 2500+ members, 50+ events, 120+ workshops.",
+      "Founded in 2022 at SNIST. 5000+ members, 50+ events, 120+ workshops.",
     type: "website",
   },
 };
