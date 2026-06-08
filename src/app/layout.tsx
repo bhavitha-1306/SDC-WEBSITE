@@ -23,22 +23,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      {/* Anti-flash: set theme before React hydrates */}
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          try {
-            var t = localStorage.getItem('sdc-theme');
-            if (t === 'dark') {
-              document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-              document.documentElement.setAttribute('data-theme', 'light');
-            }
-          } catch(e) {
-            document.documentElement.setAttribute('data-theme', 'light');
-          }
-        ` }} />
-      </head>
+    <html lang="en" data-theme="dark">
       <body className="antialiased">
         {/* Intro preloader — shows once per session */}
         <Preloader />

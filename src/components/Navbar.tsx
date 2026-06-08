@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 
 type NavItem = { href: string; label: string; cta?: boolean };
 
@@ -81,11 +80,11 @@ export default function Navbar() {
                 item.cta
                   ? { color: "#fff", background: "var(--grad)", fontWeight: 700, boxShadow: "0 0 18px rgba(255,61,110,.3)", transition: "box-shadow .2s" }
                   : {
-                      color: isActive(item.href) ? "var(--text)" : "var(--sub)",
-                      background: isActive(item.href) ? "rgba(255,61,110,.1)" : "transparent",
-                      border: isActive(item.href) ? "1px solid rgba(255,61,110,.22)" : "1px solid transparent",
-                      transition: "background .2s, color .2s, border-color .2s",
-                    }
+                    color: isActive(item.href) ? "var(--text)" : "var(--sub)",
+                    background: isActive(item.href) ? "rgba(255,61,110,.1)" : "transparent",
+                    border: isActive(item.href) ? "1px solid rgba(255,61,110,.22)" : "1px solid transparent",
+                    transition: "background .2s, color .2s, border-color .2s",
+                  }
               }
             >
               {item.label}
@@ -96,9 +95,6 @@ export default function Navbar() {
 
       {/* Right controls */}
       <div className="flex items-center gap-2">
-        {/* Theme toggle — always visible */}
-        <ThemeToggle />
-
         {/* Mobile menu toggle */}
         <button
           aria-label="Toggle navigation"
@@ -131,9 +127,9 @@ export default function Navbar() {
                   item.cta
                     ? { color: "#fff", background: "var(--grad)", fontWeight: 700, textAlign: "center" }
                     : {
-                        color: isActive(item.href) ? "var(--text)" : "var(--sub)",
-                        background: isActive(item.href) ? "rgba(255,61,110,.1)" : "transparent",
-                      }
+                      color: isActive(item.href) ? "var(--text)" : "var(--sub)",
+                      background: isActive(item.href) ? "rgba(255,61,110,.1)" : "transparent",
+                    }
                 }
               >
                 {item.label}

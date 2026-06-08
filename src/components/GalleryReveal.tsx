@@ -8,11 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const IMAGES = [
-  { src: "/assets/blog/event.jpeg",       alt: "SDC Event",     span: "col-span-2 row-span-2" },
-  { src: "/assets/blog/snist.jpeg",        alt: "SNIST Campus",  span: "" },
-  { src: "/assets/blog/community-1.jpeg",  alt: "Community",     span: "" },
-  { src: "/assets/blog/community-2.jpeg",  alt: "Members",       span: "col-span-2" },
-  { src: "/assets/blog/community-3.jpeg",  alt: "Team",          span: "" },
+  { src: "/assets/blog/moment-4-v3.jpg", alt: "Workshop Speaker Session", span: "col-span-2 row-span-2" },
+  { src: "/assets/blog/moment-1.jpg", alt: "AI Summit Speaker",     span: "" },
+  { src: "/assets/blog/moment-2.jpg", alt: "SDC Core Team",          span: "" },
+  { src: "/assets/blog/moment-5.jpg", alt: "SDC UX-Plosion Group",   span: "col-span-2" },
+  { src: "/assets/blog/moment-3.jpg", alt: "SDC Community Meetup",   span: "" },
 ];
 
 /**

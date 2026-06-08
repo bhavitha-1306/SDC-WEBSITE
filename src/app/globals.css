@@ -5,12 +5,12 @@
    Single font: Helvetica stack site-wide
 ─────────────────────────────────────── */
 :root {
-  /* ── Light theme (default) ── */
-  --bg:      #FFFCF8;
-  --surface: #FFF3E8;
-  --card:    #FFFFFF;
-  --border:  rgba(210,105,30,.14);
-  --border2: rgba(210,105,30,.24);
+  /* ── Dark theme (default) ── */
+  --bg:      #080808;
+  --surface: #0f0f0f;
+  --card:    #141414;
+  --border:  #1e1e1e;
+  --border2: #2a2a2a;
 
   --a1: #ff3d6e;
   --a2: #f97316;
@@ -18,37 +18,9 @@
   --grad: linear-gradient(135deg, #f97316 0%, #ff3d6e 52%, #c2185b 100%);
   --grad-r: linear-gradient(135deg, #c2185b 0%, #ff3d6e 52%, #f97316 100%);
 
-  --text:  #1A0D04;
-  --muted: #A06035;
-  --sub:   #6B3618;
-
-  /* Navbar in light */
-  --nav-bg: rgba(255,252,248,.88);
-  --nav-bg-scrolled: rgba(255,252,248,.97);
-  --nav-mob-bg: rgba(255,252,248,.99);
-  --nav-border: rgba(210,105,30,.15);
-  --nav-border-scrolled: rgba(210,105,30,.25);
-
-  --spring: cubic-bezier(.34, 1.56, .64, 1);
-  --ease-out: cubic-bezier(.22, .61, .36, 1);
-  --ease-expo: cubic-bezier(.19, 1, .22, 1);
-
-  --font-helv: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-/* ════════════════════════════════════════
-   DARK THEME override
-════════════════════════════════════════ */
-[data-theme="dark"] {
-  --bg: #080808;
-  --surface: #0f0f0f;
-  --card: #141414;
-  --border: #1e1e1e;
-  --border2: #2a2a2a;
-
-  --text: #efefef;
+  --text:  #efefef;
   --muted: #555;
-  --sub: #888;
+  --sub:   #888;
 
   /* Navbar in dark */
   --nav-bg: rgba(8,8,8,.85);
@@ -56,6 +28,12 @@
   --nav-mob-bg: rgba(8,8,8,.98);
   --nav-border: var(--border);
   --nav-border-scrolled: rgba(255,61,110,.14);
+
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+  --ease-expo: cubic-bezier(.19, 1, .22, 1);
+
+  --font-helv: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Smooth theme transition on key surfaces */
@@ -438,56 +416,7 @@ input, select, textarea, button {
   border-radius: 3px;
 }
 
-/* ─────────── LIGHT THEME OVERRIDES ─────────── */
 
-/* Arc Universe section always stays dark for drama */
-[data-theme="light"] .arc-section {
-  background: #0a0202;
-}
-
-/* Scrollbar */
-[data-theme="light"] ::-webkit-scrollbar-track { background: #fff3e8; }
-[data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--a2), var(--a1));
-}
-
-/* Buttons in light mode */
-[data-theme="light"] .btn-outline {
-  background: #ffffff;
-  border-color: rgba(210,105,30,.3);
-  color: var(--text);
-}
-[data-theme="light"] .btn-outline:hover {
-  background: rgba(249,115,22,.06);
-  border-color: rgba(255,61,110,.45);
-}
-
-/* Cards in light mode get subtle warm shadow */
-[data-theme="light"] .card-base,
-[data-theme="light"] .stat-card {
-  box-shadow: 0 2px 14px rgba(180,80,20,.08);
-}
-[data-theme="light"] .card-base:hover,
-[data-theme="light"] .stat-card:hover {
-  box-shadow: 0 16px 40px rgba(180,80,20,.15);
-}
-
-/* Tag pills in light mode */
-[data-theme="light"] .tag-pill {
-  color: var(--sub);
-  border-color: rgba(210,105,30,.2);
-  background: rgba(249,115,22,.04);
-}
-[data-theme="light"] .tag-pill:hover {
-  background: rgba(255,61,110,.08);
-  border-color: rgba(255,61,110,.4);
-  color: var(--a1);
-}
-
-/* hdivider in light */
-[data-theme="light"] .hdivider {
-  background: linear-gradient(90deg, transparent, rgba(210,105,30,.18) 30%, rgba(210,105,30,.18) 70%, transparent);
-}
 
 /* ─────────── REDUCED MOTION ─────────── */
 @media (prefers-reduced-motion: reduce) {
