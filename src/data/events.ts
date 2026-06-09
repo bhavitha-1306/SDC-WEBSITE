@@ -256,6 +256,24 @@ export const EVENTS: Event[] = [
     isPast: false,
     winners: [],
     image: "/assets/events/hackwithhyd.jpg"
+  },
+  {
+    id: "16",
+    title: "HACK HYDERABAD EDITION-2",
+    description: " A National Level Hackathon that brings together developers nationwide to collaborate, innovate, and build impactful solutions addressing real-world challenges through technology.",
+    date: "TBD",
+    time: "TBD",
+    location: "TBD",
+    category: "Hackathon",
+    mode: "OFFLINE",
+    speaker: "TBD",
+    attendees: 0,
+    seats: 300,
+    duration: "12-hours",
+    registrationUrl: "#",
+    isPast: false,
+    winners: [],
+    image: "/assets/events/hackwithhyd.jpg"
   }
 ];
 

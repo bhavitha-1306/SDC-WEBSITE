@@ -25,7 +25,6 @@ export default async function Home() {
     publicListPartners(),
   ]);
 
-  const upcoming       = upcomingRows[0];
   const recentPast     = mapRowsToEvents(pastRows.slice(0, 3));
 
   return (
@@ -152,117 +151,132 @@ export default async function Home() {
       {/* ═══════════════════════════════════════
           SECTION 6 — UPCOMING EVENT (cinematic launch-pad design)
       ═══════════════════════════════════════ */}
-      {upcoming && (
-        <section className="py-0 overflow-hidden" style={{ background: "var(--surface)" }}>
-          <ScrollReveal>
-            <div
-              className="relative w-full overflow-hidden"
-              style={{ minHeight: 480 }}
-            >
-              {/* Subtle gradient background — adapts to theme */}
-              <div className="absolute inset-0" style={{
-                background: "linear-gradient(135deg, rgba(249,115,22,.06) 0%, rgba(255,61,110,.05) 50%, rgba(194,24,91,.04) 100%)",
-              }} />
-              {/* Animated orb top-right */}
-              <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full pointer-events-none" style={{
-                background: "radial-gradient(circle, rgba(255,61,110,.12) 0%, transparent 65%)",
-                filter: "blur(60px)",
-                animation: "float 8s ease-in-out infinite",
-              }} />
-              {/* Orb bottom-left */}
-              <div className="absolute -bottom-20 -left-10 w-[380px] h-[380px] rounded-full pointer-events-none" style={{
-                background: "radial-gradient(circle, rgba(249,115,22,.1) 0%, transparent 65%)",
-                filter: "blur(60px)",
-                animation: "float 10s ease-in-out 1.5s infinite",
-              }} />
+      {upcomingRows.length > 0 && (
+        <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: "var(--surface)" }}>
+          <div
+            className="flex flex-col gap-10"
+            style={{
+              maxWidth: "1280px",
+              width: "100%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5rem",
+            }}
+          >
+            {upcomingRows.map((upcomingEvent) => (
+              <ScrollReveal key={upcomingEvent.id}>
+                <div
+                  className="relative w-full overflow-hidden rounded-[22px]"
+                  style={{
+                    minHeight: 440,
+                    background: "var(--card)",
+                    border: "1px solid rgba(255,61,110,.22)",
+                    boxShadow: "0 10px 40px rgba(0,0,0,.15)",
+                  }}
+                >
+                  {/* Subtle gradient background — adapts to theme */}
+                  <div className="absolute inset-0" style={{
+                    background: "linear-gradient(135deg, rgba(249,115,22,.06) 0%, rgba(255,61,110,.05) 50%, rgba(194,24,91,.04) 100%)",
+                  }} />
+                  {/* Animated orb top-right */}
+                  <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full pointer-events-none" style={{
+                    background: "radial-gradient(circle, rgba(255,61,110,.12) 0%, transparent 65%)",
+                    filter: "blur(60px)",
+                    animation: "float 8s ease-in-out infinite",
+                  }} />
+                  {/* Orb bottom-left */}
+                  <div className="absolute -bottom-20 -left-10 w-[380px] h-[380px] rounded-full pointer-events-none" style={{
+                    background: "radial-gradient(circle, rgba(249,115,22,.1) 0%, transparent 65%)",
+                    filter: "blur(60px)",
+                    animation: "float 10s ease-in-out 1.5s infinite",
+                  }} />
 
-              {/* Content */}
-              <div className="relative z-10 max-w-[1280px] mx-auto px-6 py-16 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+                  {/* Content */}
+                  <div className="relative z-10 px-8 md:px-14 py-12 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
 
-                {/* Left — event info */}
-                <div>
-                  {/* Top badges row */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[.67rem] font-bold"
-                      style={{ background: "rgba(34,197,94,.12)", color: "#22c55e", border: "1px solid rgba(34,197,94,.22)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" style={{ animation: "blink 1.5s infinite" }} />
-                      OPENING SOON
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[.67rem]"
-                      style={{ background: "rgba(255,61,110,.1)", color: "var(--a1)", border: "1px solid rgba(255,61,110,.2)" }}>
-                      🏆 National Level
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[.67rem]"
-                      style={{ background: "var(--card)", color: "var(--sub)", border: "1px solid var(--border2)" }}>
-                      👥 {upcoming.seats ?? 300} Seats
-                    </span>
-                  </div>
+                    {/* Left — event info */}
+                    <div>
+                      {/* Top badges row */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[.67rem] font-bold"
+                          style={{ background: "rgba(34,197,94,.12)", color: "#22c55e", border: "1px solid rgba(34,197,94,.22)" }}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" style={{ animation: "blink 1.5s infinite" }} />
+                          OPENING SOON
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[.67rem]"
+                          style={{ background: "rgba(255,61,110,.1)", color: "var(--a1)", border: "1px solid rgba(255,61,110,.2)" }}>
+                          🏆 National Level
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[.67rem]"
+                          style={{ background: "var(--card)", color: "var(--sub)", border: "1px solid var(--border2)" }}>
+                          👥 {upcomingEvent.seats ?? 300} Seats
+                        </span>
+                      </div>
 
-                  {/* Event name — big */}
-                  <h2
-                    className="font-extrabold leading-[0.95] mb-5"
-                    style={{ fontSize: "clamp(2.4rem,6vw,4.2rem)", letterSpacing: "-0.03em", color: "var(--text)" }}
-                  >
-                    {upcoming.title}
-                  </h2>
+                      {/* Event name — big */}
+                      <h2
+                        className="font-extrabold leading-[0.95] mb-5"
+                        style={{ fontSize: "clamp(2.4rem,6vw,4.2rem)", letterSpacing: "-0.03em", color: "var(--text)" }}
+                      >
+                        {upcomingEvent.title}
+                      </h2>
 
-                  <p className="text-[.95rem] leading-relaxed mb-7 max-w-xl" style={{ color: "var(--sub)" }}>
-                    {upcoming.description}
-                  </p>
+                      <p className="text-[.95rem] leading-relaxed mb-7 max-w-xl" style={{ color: "var(--sub)" }}>
+                        {upcomingEvent.description}
+                      </p>
 
-                  {/* Meta chips */}
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {[
-                      { icon: "📅", val: upcoming.event_date ?? "Date TBA" },
-                      { icon: "📍", val: upcoming.location ?? "Hyderabad" },
-                    ].map((m) => (
-                      <span key={m.val} className="flex items-center gap-2 px-4 py-2 rounded-full text-[.8rem]"
-                        style={{ background: "var(--card)", border: "1px solid var(--border2)", color: "var(--text)" }}>
-                        {m.icon} {m.val}
-                      </span>
-                    ))}
-                  </div>
+                      {/* Meta chips */}
+                      <div className="flex flex-wrap gap-3 mb-8">
+                        {[
+                          { icon: "📅", val: upcomingEvent.event_date ?? "Date TBA" },
+                          { icon: "📍", val: upcomingEvent.location ?? "Hyderabad" },
+                        ].map((m) => (
+                          <span key={m.val} className="flex items-center gap-2 px-4 py-2 rounded-full text-[.8rem]"
+                            style={{ background: "var(--card)", border: "1px solid var(--border2)", color: "var(--text)" }}>
+                            {m.icon} {m.val}
+                          </span>
+                        ))}
+                      </div>
 
-                  {/* CTAs */}
-                  <div className="flex gap-3 flex-wrap">
-                    <Link href={`/events/${upcoming.slug ?? upcoming.id}`} className="btn-grad" style={{ fontSize: ".9rem", padding: ".78rem 1.8rem" }}>
-                      Register Now →
-                    </Link>
-                    <Link href="/events" className="btn-outline" style={{ fontSize: ".9rem", padding: ".78rem 1.8rem" }}>
-                      All Events
-                    </Link>
+                      {/* CTAs */}
+                      <div className="flex gap-3 flex-wrap">
+                        <Link href={`/events/${upcomingEvent.slug ?? upcomingEvent.id}`} className="btn-grad" style={{ fontSize: ".9rem", padding: ".78rem 1.8rem" }}>
+                          Register Now →
+                        </Link>
+                        <Link href="/events" className="btn-outline" style={{ fontSize: ".9rem", padding: ".78rem 1.8rem" }}>
+                          All Events
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Right — stylised date/status block */}
+                    <div className="text-center flex-shrink-0 lg:min-w-[220px]">
+                      {/* Circular glow badge */}
+                      <div
+                        className="inline-flex flex-col items-center justify-center rounded-full"
+                        style={{
+                          width: 180, height: 180,
+                          background: "var(--card)",
+                          border: "1px solid rgba(255,61,110,.28)",
+                          boxShadow: "0 0 50px rgba(255,61,110,.12), inset 0 0 30px rgba(255,61,110,.04)",
+                          animation: "glow-pulse 3s ease-in-out infinite",
+                        }}
+                      >
+                        <div className="gtext font-extrabold text-[2rem] leading-none">TBA</div>
+                        <div className="text-[.62rem] tracking-[0.18em] mt-1.5" style={{ color: "var(--muted)" }}>DATE</div>
+                      </div>
+                      <p className="text-[.72rem] mt-4 tracking-wider" style={{ color: "#555" }}>
+                        REGISTRATIONS<br />OPENING SOON
+                      </p>
+                    </div>
+
                   </div>
                 </div>
-
-                {/* Right — stylised date/status block */}
-                <div className="text-center flex-shrink-0 lg:min-w-[220px]">
-                  {/* Circular glow badge */}
-                  <div
-                    className="inline-flex flex-col items-center justify-center rounded-full"
-                    style={{
-                      width: 180, height: 180,
-                      background: "var(--card)",
-                      border: "1px solid rgba(255,61,110,.28)",
-                      boxShadow: "0 0 50px rgba(255,61,110,.12), inset 0 0 30px rgba(255,61,110,.04)",
-                      animation: "glow-pulse 3s ease-in-out infinite",
-                    }}
-                  >
-                    <div className="gtext font-extrabold text-[2rem] leading-none">TBA</div>
-                    <div className="text-[.62rem] tracking-[0.18em] mt-1.5" style={{ color: "var(--muted)" }}>DATE</div>
-                  </div>
-                  <p className="text-[.72rem] mt-4 tracking-wider" style={{ color: "#555" }}>
-                    REGISTRATIONS<br />OPENING SOON
-                  </p>
-                </div>
-
-              </div>
-
-              {/* Bottom gradient divider */}
-              <div className="absolute bottom-0 left-0 right-0 h-px" style={{
-                background: "linear-gradient(90deg, transparent, rgba(255,61,110,.3) 50%, transparent)",
-              }} />
-            </div>
-          </ScrollReveal>
+              </ScrollReveal>
+            ))}
+          </div>
         </section>
       )}
 

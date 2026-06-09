@@ -12,7 +12,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/highlights", label: "Highlights" },
-  { href: "/team", label: "Team" },
+  { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/host", label: "Host With Us", cta: true },
@@ -72,6 +72,17 @@ export default function Navbar() {
           <li key={item.href}>
             <Link
               href={item.href}
+              onClick={(e) => {
+                if (item.href.startsWith("/#")) {
+                  const targetId = item.href.slice(2);
+                  const targetEl = document.getElementById(targetId);
+                  if (targetEl) {
+                    e.preventDefault();
+                    targetEl.scrollIntoView({ behavior: "smooth" });
+                    setMobileOpen(false);
+                  }
+                }
+              }}
               className="block text-[.8rem] font-medium px-3.5 py-1.5 rounded-md"
               style={
                 item.cta
@@ -119,6 +130,17 @@ export default function Navbar() {
             <li key={item.href}>
               <Link
                 href={item.href}
+                onClick={(e) => {
+                  if (item.href.startsWith("/#")) {
+                    const targetId = item.href.slice(2);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                      e.preventDefault();
+                      targetEl.scrollIntoView({ behavior: "smooth" });
+                      setMobileOpen(false);
+                    }
+                  }
+                }}
                 className="block text-sm font-medium px-3 py-2.5 rounded-md"
                 style={
                   item.cta

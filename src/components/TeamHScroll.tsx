@@ -27,7 +27,7 @@ const CORE_TEAM = [
   { name: "Routhu Srihitha",     role: "Project Manager",    photo: "/assets/team/routhu-srihitha.jpg",     initials: "RS" },
   { name: "S. Lalith Charan",    role: "Organizer",          photo: "/assets/team/lalith-charan.jpg",       initials: "LC" },
   { name: "Ravalika",            role: "College Outreach",   photo: "/assets/team/ravalika.jpg",            initials: "RV" },
-  { name: "Kotawad Shravani",    role: "Corporate Outreach", photo: "/assets/team/shravani.jpg",            initials: "KS" },
+  { name: "Kotawad Shravani",    role: "Corporate Reachout Lead", photo: "/assets/team/shravani.jpg",            initials: "KS" },
 ];
 
 /* Gradient palette cycling through SDC brand colors */
@@ -62,8 +62,11 @@ export default function TeamHScroll() {
     if (!wrap || !track) return;
 
     const ctx = gsap.context(() => {
-      const totalX   = track.scrollWidth - wrap.offsetWidth;
-      const scrollDist = Math.min(totalX, totalX * 0.92);
+      const labelPanel = wrap.querySelector(".team-label-panel") as HTMLElement | null;
+      const labelWidth = labelPanel ? labelPanel.offsetWidth : 0;
+      const visibleWidth = wrap.offsetWidth - labelWidth;
+      const totalX = track.scrollWidth - visibleWidth;
+      const scrollDist = totalX;
 
       gsap.to(track, {
         x: -scrollDist,
@@ -94,12 +97,24 @@ export default function TeamHScroll() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#team") {
+      const timer = setTimeout(() => {
+        const el = document.getElementById("team");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <section id="team" className="overflow-hidden" ref={wrapRef} style={{ background: "var(--surface)" }}>
       <div className="flex items-center" style={{ height: "70vh", minHeight: "480px" }}>
 
         {/* Sticky label panel */}
-        <div className="flex-shrink-0 w-[280px] px-8 hidden lg:block">
+        <div className="team-label-panel flex-shrink-0 w-[280px] px-8 hidden lg:block">
           <div className="sec-label mb-3">// THE TEAM</div>
           <h2 className="sec-title" style={{ fontSize: "1.8rem" }}>
             People<br />behind SDC
@@ -123,7 +138,7 @@ export default function TeamHScroll() {
         </div>
 
         {/* Scrolling track */}
-        <div ref={trackRef} className="flex gap-6 pl-6 pr-24" style={{ willChange: "transform" }}>
+        <div ref={trackRef} className="flex gap-6 pl-6 pr-6" style={{ willChange: "transform" }}>
 
           {/* Tech Team group label */}
           <div className="tcard flex-shrink-0 flex items-center justify-center" style={{ width: 140 }}>
@@ -159,6 +174,9 @@ export default function TeamHScroll() {
               <TeamMemberCard member={{ ...m, team: "Core Team" }} gradient={GRADIENTS[i % GRADIENTS.length]} />
             </div>
           ))}
+
+          {/* Spacer to fix browser flex scroll padding-right cutoff bug */}
+          <div className="flex-shrink-0" style={{ width: 160 }} />
 
         </div>
       </div>
