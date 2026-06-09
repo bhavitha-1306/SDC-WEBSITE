@@ -91,7 +91,7 @@ export default function TestimonialsMarquee() {
   const row2 = [...TESTIMONIALS.slice(4), ...TESTIMONIALS.slice(0, 4), ...TESTIMONIALS.slice(4), ...TESTIMONIALS.slice(0, 4)];
 
   return (
-    <section className="py-20 overflow-hidden" style={{ background: "var(--surface)" }}>
+    <section className="pt-12 pb-20 overflow-hidden" style={{ background: "var(--surface)" }}>
       <div className="max-w-[1280px] mx-auto px-6 mb-12">
         <ScrollRevealInline>
           <div className="sec-label mb-2">// COMMUNITY VOICES</div>

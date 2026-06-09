@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PHOTOS = [
   { src: "/assets/blog/event.jpeg",       alt: "SDC Event",    col: "col-span-2", row: "" },
-  { src: "/assets/events/hash-it-out-2.jpg", alt: "Hackathon", col: "",            row: "" },
+  { src: "/assets/blog/community-group.jpg", alt: "SDC Community Group", col: "",            row: "" },
   { src: "/assets/blog/community-1.jpeg", alt: "Community",    col: "",            row: "" },
   { src: "/assets/blog/community-2.jpeg", alt: "Members",      col: "",            row: "" },
   { src: "/assets/blog/community-3.jpeg", alt: "Workshop",     col: "",            row: "" },

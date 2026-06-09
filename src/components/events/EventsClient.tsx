@@ -51,7 +51,7 @@ export default function EventsClient({
           {upcoming.length === 0 && (
             <p className="text-sm text-center p-6 rounded-xl" style={{ color: "var(--muted)", border: "1px dashed var(--border)" }}>
               No upcoming events yet. Subscribe via Instagram{" "}
-              <a href="https://instagram.com/sdc.snist" target="_blank" rel="noopener" className="underline" style={{ color: "var(--a1)" }}>@sdc.snist</a>
+              <a href="https://instagram.com/sdcindia" target="_blank" rel="noopener" className="underline" style={{ color: "var(--a1)" }}>@sdcindia</a>
               {" "}for updates.
             </p>
           )}

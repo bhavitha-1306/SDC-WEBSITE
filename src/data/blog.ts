@@ -1,4 +1,4 @@
-﻿import type { BlogPost } from "@/types/blog";
+import type { BlogPost } from "@/types/blog";
 
 export const blogPostsStub: BlogPost[] = [
   {
@@ -21,7 +21,7 @@ export const blogPostsStub: BlogPost[] = [
       {
         title: "Where We Are Today",
         paragraphs: [
-          "Today, SDC has grown into a strong technical community with over 2500 members and a growing national footprint under SDC INDIA.",
+          "Today, SDC has grown into a strong technical community with over 5000+ members and a growing national footprint under SDC INDIA.",
         ],
       },
       {
@@ -57,7 +57,7 @@ export const blogPostsStub: BlogPost[] = [
           "Hosted impactful student-focused events",
           "Built collaborations with industry professionals",
           "Formed partnerships with national communities",
-          "Expanded to 2500+ members",
+          "Expanded to 5000+ members",
         ],
         quote: "The founding values continue to shape SDC's culture and growth path.",
       },

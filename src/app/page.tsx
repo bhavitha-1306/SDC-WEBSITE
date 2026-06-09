@@ -85,7 +85,7 @@ export default async function Home() {
                 The <strong style={{ color: "var(--text)" }}>Student Developers Community (SDC)</strong> was established in <strong style={{ color: "var(--text)" }}>2022 at SNIST</strong>, founded by <strong style={{ color: "var(--text)" }}>Mr. Chandrashekhar M</strong> — a SNIST alumnus passionate about bridging academic and industry worlds.
               </p>
               <p className="text-[.95rem] leading-[1.85]" style={{ color: "var(--sub)" }}>
-                Today, SDC unites <strong style={{ color: "var(--text)" }}>2500+ members</strong> with a growing national footprint under <span className="gtext font-bold">SDC INDIA</span> — collaborating with Microsoft, GDSC, PyCon, Hack This Fall and more.
+                Today, SDC unites <strong style={{ color: "var(--text)" }}>5000+ members</strong> with a growing national footprint under <span className="gtext font-bold">SDC INDIA</span> — collaborating with Microsoft, GDSC, PyCon, Hack This Fall and more.
               </p>
               <div className="mt-8">
                 <Link href="/about" className="btn-grad" style={{ fontSize: ".88rem" }}>Learn more →</Link>
@@ -269,7 +269,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════
           SECTION 7 — PAST EVENTS
       ═══════════════════════════════════════ */}
-      <section className="py-24">
+      <section className="pt-24 pb-12">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal>
             <div className="flex justify-between items-end mb-10 flex-wrap gap-4">

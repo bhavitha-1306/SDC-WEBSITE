@@ -70,7 +70,7 @@ export default function TeamHScroll() {
         ease: "none",
         scrollTrigger: {
           trigger: wrap,
-          start: "top top",
+          start: "center center",
           end: () => `+=${scrollDist * 0.65}`,
           pin: true,
           scrub: 1,
@@ -96,7 +96,7 @@ export default function TeamHScroll() {
 
   return (
     <section id="team" className="overflow-hidden" ref={wrapRef} style={{ background: "var(--surface)" }}>
-      <div className="flex items-center" style={{ height: "100vh" }}>
+      <div className="flex items-center" style={{ height: "70vh", minHeight: "480px" }}>
 
         {/* Sticky label panel */}
         <div className="flex-shrink-0 w-[280px] px-8 hidden lg:block">

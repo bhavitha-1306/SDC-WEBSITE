@@ -35,7 +35,7 @@ export default function HeroContent() {
         }}
       >
         <span className="pulse" />
-        ✦ HACK FOR HYDERABAD · Registrations Opening Soon
+        ✦ HACK HYDERABAD EDITION-1 · Registrations Opening Soon
       </motion.div>
 
       {/* ── Giant background text (depth effect) ── */}

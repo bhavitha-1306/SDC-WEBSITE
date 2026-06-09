@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const NAV = [
@@ -14,15 +15,13 @@ const NAV = [
 const INVOLVED = [
   { href: "/host", label: "Host an Event", external: false },
   { href: "/contact", label: "Contact Us", external: false },
-  { href: "https://github.com/SDC", label: "Open Source", external: true },
 ];
 
 const CONNECT = [
   { href: "mailto:hello@sdcindia.tech",             value: "hello@sdcindia.tech" },
   { href: "https://sdcindia.tech",                  value: "sdcindia.tech" },
-  { href: "https://github.com/SDC",                 value: "github.com/SDC" },
-  { href: "https://linkedin.com/company/sdc-snist", value: "SDC SNIST" },
-  { href: "https://instagram.com/sdc.snist",        value: "@sdc.snist" },
+  { href: "https://linkedin.com/company/sdcindia",  value: "SDC India" },
+  { href: "https://instagram.com/sdcindia",         value: "@sdcindia" },
 ];
 
 export default function Footer() {
@@ -43,10 +42,16 @@ export default function Footer() {
           </h4>
           <div className="flex items-center gap-2 mb-2">
             <div
-              className="w-7 h-7 rounded-md flex items-center justify-center text-white text-[.55rem] font-bold"
-              style={{ background: "var(--grad)" }}
+              className="relative w-7 h-7 rounded-md overflow-hidden flex-shrink-0"
+              style={{ boxShadow: "0 0 10px rgba(255,61,110,.3)" }}
             >
-              SDC
+              <Image
+                src="/assets/blog/sdc-india-logo.jpeg"
+                alt="SDC Logo"
+                fill
+                className="object-cover"
+                sizes="28px"
+              />
             </div>
             <span className="font-extrabold text-[.82rem]" style={{ color: "var(--text)" }}>SDC INDIA</span>
           </div>

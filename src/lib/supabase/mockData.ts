@@ -445,7 +445,7 @@ export const MOCK_EVENTS: EventRow[] = [
   {
     id: "15",
     slug: "hack-for-hyderabad-1",
-    title: "HACK FOR HYDERABAD Edition 1",
+    title: "HACK HYDERABAD EDITION-1",
     description: "A National Level Hackathon that brings together developers nationwide to collaborate, innovate, and build impactful solutions addressing real-world challenges through technology.",
     long_description: null,
     event_date: null,
@@ -482,9 +482,9 @@ export const MOCK_TEAM_MEMBERS: TeamMemberRow[] = [
     initials: "CM",
     name: "Chandrashekhar M",
     role: "Founder",
-    bio: "Founded SDC in 2022 at Sreenidhi Institute of Science and Technology (SNIST). A SNIST alumnus from the 2021–2024 batch, his vision was to create a space where students could grow technically through collaboration and hands-on learning — moving beyond classroom theory into real-world technology. Under his leadership, SDC has grown to 2500+ members with a national footprint as SDC INDIA.",
+    bio: "Founded SDC in 2022 at Sreenidhi Institute of Science and Technology (SNIST). A SNIST alumnus from the 2021–2024 batch, his vision was to create a space where students could grow technically through collaboration and hands-on learning — moving beyond classroom theory into real-world technology. Under his leadership, SDC has grown to 5000+ members with a national footprint as SDC INDIA.",
     skills: ["Community Building", "Vision", "Mentorship", "Leadership", "Event Strategy"],
-    impact: "Founded SDC · Grew it to 2500+ members",
+    impact: "Founded SDC · Grew it to 5000+ members",
     gradient: "linear-gradient(135deg,#e84393,#f97316)",
     section: "Founder",
     photo_url: null,
@@ -784,7 +784,7 @@ export const MOCK_BLOG_POSTS: BlogPostRow[] = [
       {
         title: "Where We Are Today",
         paragraphs: [
-          "Today, SDC has grown into a strong technical community with over 2500 members and a growing national footprint under SDC INDIA.",
+          "Today, SDC has grown into a strong technical community with over 5000+ members and a growing national footprint under SDC INDIA.",
         ],
       },
       {
@@ -827,7 +827,7 @@ export const MOCK_BLOG_POSTS: BlogPostRow[] = [
           "Hosted impactful student-focused events",
           "Built collaborations with industry professionals",
           "Formed partnerships with national communities",
-          "Expanded to 2500+ members",
+          "Expanded to 5000+ members",
         ],
         quote: "The founding values continue to shape SDC's culture and growth path.",
       },

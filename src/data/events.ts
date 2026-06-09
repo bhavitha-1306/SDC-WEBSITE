@@ -1,4 +1,4 @@
-﻿import { Event } from "@/types/events";
+import { Event } from "@/types/events";
 
 export const EVENTS: Event[] = [
   {
@@ -241,7 +241,7 @@ export const EVENTS: Event[] = [
   },
   {
     id: "15",
-    title: "HACK FOR HYDERABAD Edition - 1",
+    title: "HACK HYDERABAD EDITION-1",
     description: " A National Level Hackathon that brings together developers nationwide to collaborate, innovate, and build impactful solutions addressing real-world challenges through technology.",
     date: "TBD",
     time: "TBD",
