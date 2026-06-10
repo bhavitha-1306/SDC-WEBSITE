@@ -43,7 +43,7 @@ export function getMockSupabaseClient() {
       case "v_gallery_public":
         return MOCK_GALLERY_IMAGES;
       case "admin_emails":
-        return [{ email: "goutipavankumar1249@gmail.com", role: "admin" }];
+        return [{ email: "admin@sdcindia01.com", role: "admin" }];
       default:
         return [];
     }

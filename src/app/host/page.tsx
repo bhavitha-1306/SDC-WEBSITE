@@ -42,8 +42,8 @@ export default function HostPage() {
             </ul>
             <div className="rounded-[10px] p-3 mt-4" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
               <div className="text-[.6rem] mb-1 uppercase tracking-widest" style={{ color: "var(--muted)" }}>Or reach us directly</div>
-              <a href="mailto:goutipavankumar1249@gmail.com" className="text-[.82rem] font-semibold break-all" style={{ color: "var(--a1)" }}>
-                goutipavankumar1249@gmail.com →
+              <a href="mailto:admin@sdcindia01.com" className="text-[.82rem] font-semibold break-all" style={{ color: "var(--a1)" }}>
+                admin@sdcindia01.com →
               </a>
             </div>
           </div>

@@ -165,6 +165,17 @@ export default async function Home() {
               gap: "2.5rem",
             }}
           >
+            <ScrollReveal>
+              <div className="flex justify-between items-end mb-2 flex-wrap gap-4">
+                <div>
+                  <div className="sec-label mb-2">// UPCOMING</div>
+                  <h2 className="sec-title">What&apos;s coming next</h2>
+                </div>
+                <Link href="/events" className="btn-outline" style={{ fontSize: ".82rem" }}>
+                  See all events →
+                </Link>
+              </div>
+            </ScrollReveal>
             {upcomingRows.map((upcomingEvent) => (
               <ScrollReveal key={upcomingEvent.id}>
                 <div

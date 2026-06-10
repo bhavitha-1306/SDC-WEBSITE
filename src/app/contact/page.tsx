@@ -1,10 +1,8 @@
-import { Mail, Globe, Github, Linkedin, Instagram } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 
 const SOCIALS = [
-  { Icon: Mail,      label: "Email",     value: "goutipavankumar1249@gmail.com", href: "mailto:goutipavankumar1249@gmail.com", color: "#e84393" },
-  { Icon: Globe,     label: "Website",   value: "sdcindia.tech",                 href: "https://sdcindia.tech",                color: "#06b6d4" },
-  { Icon: Github,    label: "GitHub",    value: "github.com/SDC",                href: "https://github.com/SDC",               color: "#ffffff" },
+  { Icon: Mail,      label: "Email",     value: "admin@sdcindia01.com",          href: "mailto:admin@sdcindia01.com",          color: "#e84393" },
   { Icon: Linkedin,  label: "LinkedIn",  value: "SDC India",                     href: "https://linkedin.com/company/sdcindia",  color: "#0a66c2" },
   { Icon: Instagram, label: "Instagram", value: "@sdcindia",                    href: "https://instagram.com/sdcindia",       color: "#f97316" },
 ];
